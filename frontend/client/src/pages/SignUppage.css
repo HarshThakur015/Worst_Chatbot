@@ -1,0 +1,142 @@
+/* Center the signup container properly */
+.signup-container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px; /* Reduced padding */
+    width: 100vw;
+    box-sizing: border-box;
+    overflow: hidden; /* Prevent scrolling */
+}
+
+/* Form styling */
+.signup-form {
+    background: #252525; /* Slightly lighter shade for contrast */
+    padding: 1.5rem; /* Reduced padding */
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(255, 255, 255, 0.15);
+    width: 100%;
+    max-width: 380px; /* Reduced max-width */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced gap between elements */
+}
+
+/* Form heading */
+.signup-form h2 {
+    color: #facc15;
+    font-size: 1.6rem; /* Reduced font size */
+    margin-bottom: 0.8rem; /* Reduced margin */
+    font-weight: bold;
+}
+
+/* Input fields */
+.signup-input {
+    width: 100%;
+    max-width: 280px; /* Reduced max-width */
+    padding: 10px; /* Reduced padding */
+    margin: 8px 0; /* Reduced spacing between inputs */
+    border: 2px solid #facc15;
+    border-radius: 8px;
+    background-color: #333;
+    color: white;
+    font-size: 1rem;
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+/* Remove input focus outline */
+.signup-input:focus {
+    outline: none;
+    border-color: #eab308;
+}
+
+/* Button group */
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px; /* Reduced gap between buttons */
+    margin-top: 1rem; /* Reduced margin */
+    width: 100%;
+    max-width: 280px; /* Reduced max-width */
+}
+
+/* Button styling */
+.back-button,
+.signup-button {
+    width: 100%;
+    padding: 12px; /* Reduced padding */
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem; /* Reduced font size */
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+/* Go Back button */
+.back-button {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+.back-button:hover {
+    background-color: #e63946;
+    transform: scale(1.05);
+}
+
+/* Sign Up button */
+.signup-button {
+    background-color: #48bb78;
+    color: white;
+}
+
+.signup-button:hover {
+    background-color: #38a169;
+    transform: scale(1.05);
+}
+
+/* Disabled Sign Up button */
+.signup-button:disabled {
+    background-color: #666;
+    cursor: not-allowed;
+    transform: none;
+}
+
+/* Error message styling */
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.85rem; /* Reduced font size */
+    margin: 6px 0; /* Reduced margin */
+    text-align: center;
+}
+
+/* Success message styling */
+.success-message {
+    color: #48bb78;
+    font-size: 0.85rem; /* Reduced font size */
+    margin: 6px 0; /* Reduced margin */
+    text-align: center;
+}
+
+/* Responsive design */
+@media (max-width: 480px) {
+    .signup-form {
+        padding: 1.2rem; /* Reduced padding */
+    }
+    
+    .signup-form h2 {
+        font-size: 1.4rem; /* Reduced font size */
+    }
+    
+    .signup-input {
+        padding: 8px; /* Reduced padding */
+    }
+}
