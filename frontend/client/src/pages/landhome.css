@@ -1,0 +1,84 @@
+/* Ensure the container is centered horizontally and vertically */
+.landing-container {
+  height: 100vh; /* Full viewport height */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center vertically */
+  align-items: center; /* Center horizontally */
+  text-align: center;
+  background-color: #1a1a1a; /* Dark background */
+  color: white;
+  padding: 20px;
+}
+
+/* Style the heading */
+.landing-title {
+  font-size: 4rem; /* Bigger title */
+  font-weight: bold;
+  color: #facc15; /* Yellow text */
+  margin-bottom: 20px;
+}
+
+/* Style the description text */
+.landing-description {
+  font-size: 1.5rem; /* Larger text */
+  max-width: 700px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* Container for buttons */
+.button-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Add space between buttons */
+  width: 100%;
+  align-items: center;
+}
+
+/* General Button Styling */
+.landing-button {
+  background-color: #facc15; /* Yellow */
+  color: #1a1a1a; /* Dark text */
+  padding: 16px 40px;
+  font-size: 1.5rem; /* Bigger button text */
+  font-weight: bold;
+  border: none;
+  border-radius: 40px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+  width: 250px; /* Same width for all buttons */
+  text-align: center;
+}
+
+/* Hover effect */
+.landing-button:hover {
+  background-color: #eab308; /* Darker yellow */
+  transform: scale(1.1);
+}
+
+/* Signup and Login button specific styling */
+.signup-button {
+  background-color: #f87171; /* Soft red */
+}
+
+.signup-button:hover {
+  background-color: #dc2626; /* Darker red */
+}
+
+.login-button {
+  background-color: #4ade80; /* Green */
+}
+
+.login-button:hover {
+  background-color: #22c55e; /* Darker green */
+}
+
+/* Users button specific styling */
+.users-button {
+  background-color: #4a90e2; /* Blue */
+}
+
+.users-button:hover {
+  background-color: #357abd; /* Darker blue */
+}

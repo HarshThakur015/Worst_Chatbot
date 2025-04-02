@@ -1,0 +1,23 @@
+meta {
+  name: Crud post
+  type: http
+  seq: 4
+}
+
+post {
+  url: http://localhost:8000/users/
+  body: json
+  auth: none
+}
+
+body:json {
+  
+    {
+      "firstName": "Jack",
+      "lastName": "Smith",
+      "email": "jack@example.com",
+      "userName": "jack123",
+      "age": 30
+    }
+  
+}

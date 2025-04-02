@@ -1,0 +1,22 @@
+meta {
+  name: Crud Put
+  type: http
+  seq: 5
+}
+
+put {
+  url: http://localhost:8000/users/67c805777c535673849f3a96
+  body: json
+  auth: none
+}
+
+body:json {
+  
+    {
+      "firstName": "Jack",
+      "lastName": "Smith",
+      "email": "jack@example.com",
+      "userName": "jack123",
+      "age": 35
+    }
+}
