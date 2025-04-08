@@ -1,35 +1,36 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import axios from "axios";
+import { useAuth } from "../context/AuthContext";
 import "./Loginpage.css";
 
-export default function LoginPage() {
-  const navigate = useNavigate();
+const LoginPage = () => {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
   });
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const { login } = useAuth();
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleLogin = async () => {
+  const handleLogin = async (e) => {
+    e.preventDefault();
+    setError("");
+
     if (!formData.username || !formData.password) {
       setError("Please fill in all fields");
       return;
     }
 
-    try {
-      const response = await axios.post("http://localhost:8000/users/login", formData);
-      if (response.status === 200) {
-        // Store user data in localStorage or context if needed
-        navigate("/chat");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      setError(error.response?.data?.message || "Login failed. Please try again.");
+    const result = await login(formData.username, formData.password);
+    
+    if (result.success) {
+      navigate("/");
+    } else {
+      setError(result.error);
     }
   };
 
@@ -38,28 +39,25 @@ export default function LoginPage() {
       <div className="login-form">
         <h2>Login</h2>
         {error && <div className="error-message">{error}</div>}
-        
         <input
           type="text"
           name="username"
-          placeholder="Username"
           value={formData.username}
           onChange={handleChange}
-          className="login-input"
+          placeholder="Username"
         />
-        
         <input
           type="password"
           name="password"
-          placeholder="Password"
           value={formData.password}
           onChange={handleChange}
-          className="login-input"
+          placeholder="Password"
         />
-
         <div className="button-group">
-          <button className="back-button" onClick={() => navigate(-1)}>Go Back</button>
-          <button 
+          <button className="back-button" onClick={() => navigate("/")}>
+            Go Back
+          </button>
+          <button
             className="login-button"
             onClick={handleLogin}
             disabled={!formData.username || !formData.password}
@@ -70,4 +68,6 @@ export default function LoginPage() {
       </div>
     </div>
   );
-}
+};
+
+export default LoginPage;
